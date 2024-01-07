@@ -1,0 +1,335 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67835289-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67835289-3');
+</script>
+
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/video_comparison.js"></script>
+<script src="js/app.js"></script>
+
+<!-- ======================================================================= -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<style type="text/css">
+  body {
+    /* font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+    font-family: "Avenir", sans-serif;
+    font-weight:400;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  .column {
+    float: left;
+    /* width: 50%; */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  #authors td {
+    padding-bottom:5px;
+    padding-top:30px;
+  }
+</style>
+
+
+<html>
+  <head>
+
+	<title>Deep Atmospheric TUrbulence Mitigation network (DATUM)</title>
+	<meta property="og:title" content="DATUM" />
+	<meta property="og:image" content="" />
+	<meta property="og:image:width" content="3000" />
+	<meta property="og:image:height" content="800" />
+  </head>
+
+  <body>
+    <br><br><br><br>
+          <center>
+          	<span style="font-size:38px">Spatio-Temporal Turbulence Mitigation: A Translational Perspective</span>
+            <br><br>
+		  <table align=center width=800px>
+	  			  <tr>
+	  	        <td align=center width=100px>
+	  					  <center>
+	  						<span style="font-size:16px"><a href="http://xg416.github.io">Xingguang Zhang</a></span>
+		  		  		</center>
+		  		  	</td>
+	  	        <td align=center width=100px>
+	  					  <center>
+	  						<span style="font-size:16px"><a href="https://web.ics.purdue.edu/~nchimitt/index.html">Nicholas Chimitt</a></span>
+		  		  		</center>
+		  		  	</td>
+	  	        <td align=center width=100px>
+                <center>
+	  						<span style="font-size:16px"><a href="http://yihengchi.me/">Yiheng Chi</a></span>
+		  		  		</center>
+		  		  	</td>
+	  	        <td align=center width=100px>
+                <center>
+	  						<span style="font-size:16px"><a href="https://web.ics.purdue.edu/~mao114/">Zhiyuan Mao</a></span>
+		  		  		</center>
+		  		  	</td>
+	  	        <td align=center width=100px>
+	  					  <center>
+	  						<span style="font-size:16px"><a href="https://engineering.purdue.edu/ChanGroup/stanleychan.html">Stanley Chan</a></span>
+		  		  		</center>
+		  		  	</td>
+			  </table>
+        <br>
+	  		  <table align=center width=650px style="font-size:20px;">
+	  			  <tr>
+              <td align=center width=150px>
+                <center>
+                  <span><a href="http://arxiv.org/abs/2207.06465"> [Paper]</a></span>
+                  </center>
+                  </td>
+	  	          <td align=center width=150px>
+	  					<center>
+	  						<span style=""><a href="https://github.com/xg416/DATUM"> [Code]</a></span>
+		  		  		</center>
+		  		  	  </td>
+                <td align=center width=150px>
+	  					  <center>
+	  						<span style=""><a href="https://engineering.purdue.edu/ChanGroup/project_turbulence.html"> [Relevant]</a></span>
+		  		  		</center>
+		  		  	  </td>
+              </tr>
+	  			  <tr>
+			  </table>
+        <!-- ======================================================================= <br>
+        <span style="font-size:20px">under review</span> -->
+      </center>
+
+  		  <br>
+  		  <table align=center width=1100px>
+  			  <tr>
+            <td width=1050px>
+    					<center>
+    	          <a href="figs/framework.png"><img src = "figs/framework.png" width="70%"></img></href></a><br>
+  					  </center>
+            </td>
+          </tr>
+  		  </table>
+      	<br><br>
+
+		  <hr>
+
+
+      <center>
+        <h1>Abstract</h1>
+        <p> 
+          Recovering images distorted by atmospheric turbulence is a challenging inverse problem due to the stochastic 
+          nature of turbulence. Although numerous turbulence mitigation (TM) algorithms have been proposed, their 
+          efficiency and generalization to real-world dynamic scenarios remain severely limited. Building upon the 
+          intuitions of classical TM algorithms, we present the Deep Atmospheric TUrbulence Mitigation network (DATUM). 
+          DATUM aims to overcome major challenges when transitioning from classical to deep learning approaches. By 
+          carefully integrating the merits of classical multi-frame TM methods into a deep network structure, we 
+          demonstrate that DATUM can efficiently perform long-range temporal aggregation using a recurrent fashion, 
+          while deformable attention and temporal-channel attention seamlessly facilitate pixel registration and lucky 
+          imaging. With additional supervision, tilt and blur degradation can be jointly mitigated. These inductive 
+          biases empower DATUM to significantly outperform existing methods while delivering a tenfold increase in 
+          processing speed. A large-scale training dataset, ATSyn, is presented as a co-invention to enable the 
+          generalization to real turbulence. 
+        <br><br>
+		  </table>
+
+		  <hr>
+
+      <center>
+        <h1>Video Results</h1>
+
+        <div class="video-compare-container" id="G00071_compare_videoDiv">
+          <video class="video" id="G00071_compare_video" loop playsinline autoPlay muted 
+                src="videos/G00071.ogg" onplay="resizeAndPlay(this)">
+          </video>
+          <canvas height=0 class="videoMerge" id="G00071_compare_videoMerge"></canvas>
+        </div>
+        <br>
+        <div class="video-compare-container" id="street_compare_videoDiv">
+          <video class="video" id="street_compare_video" loop playsinline autoPlay muted 
+                src="videos/street.ogg" onplay="resizeAndPlay(this)">
+          </video>
+          <canvas height=0 class="videoMerge" id="street_compare_videoMerge"></canvas>
+        </div>
+        <br>
+        <div class="video-compare-container" id="G02150_compare_videoDiv">
+          <video class="video" id="G02150_compare_video" loop playsinline autoPlay muted 
+                src="videos/G02150.ogg" onplay="resizeAndPlay(this)">
+          </video>
+          <canvas height=0 class="videoMerge" id="G02150_compare_videoMerge"></canvas>
+        </div>
+        <br>
+        <div class="video-compare-container" id="G00393_compare_videoDiv">
+          <video class="video" id="G00393_compare_video" loop playsinline autoPlay muted 
+                src="videos/G00393.ogg" onplay="resizeAndPlay(this)">
+          </video>
+          <canvas height=0 class="videoMerge" id="G00393_compare_videoMerge"></canvas>
+        </div>
+        <br><br>
+      </center>
+
+      <hr>
+
+      <center>
+      <h1> TMT trained on our ATSyn dataset</h1>
+        <div class="video-compare-container" id="TMT_G00393_compare_videoDiv">
+          <video class="video" id="TMT_G00393_compare_video" loop playsinline autoPlay muted 
+                src="videos/TMT_G00393.ogg" onplay="resizeAndPlay(this)">
+          </video>
+          <canvas height=0 class="videoMerge" id="TMT_G00393_compare_videoMerge"></canvas>
+        </div>
+        <br>
+        <div class="video-compare-container" id="TMT_G00071_compare_videoDiv">
+          <video class="video" id="TMT_G00071_compare_video" loop playsinline autoPlay muted 
+                src="videos/TMT_G00071.ogg" onplay="resizeAndPlay(this)">
+          </video>
+          <canvas height=0 class="videoMerge" id="TMT_G00071_compare_videoMerge"></canvas>
+        </div>
+        <br><br>
+      </center>
+      
+      <hr>
+      <h1> visual comparsion on static scene images</h1>
+      <table align=center width=1100px>
+        <tr>
+          <td width=1050px>
+            <center>
+              <a href="figs/framework.png"><img src = "figs/static.jpg" width="70%"></img></href></a><br>
+            </center>
+          </td>
+        </tr>
+      </table>
+
+
+      <hr>
+  		  <!-- <table align=center width=550px> -->
+  		  <table align=center width=1100px>
+	 		<center><h1>Data Synthesis Method</h1></center>
+       <center><span class="image"><img src="figs/synthesis.png" alt="" width="800"/></span></center>
+       <br><br>
+  		  </table>
+		  
+
+			</left>
+		</td>
+			 </tr>
+		</table>
+
+		<br><br>
+
+
+</body>
+</html>
