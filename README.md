@@ -1,4 +1,3 @@
-# DATUM
 <div align="center">
 
 # 【CVPR'2024🔥】Spatio-Temporal Turbulence Mitigation: A Translational Perspective
