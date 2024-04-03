@@ -266,6 +266,20 @@
         <p>Videos are from the <a href="https://arxiv.org/abs/2211.01917"> BRIAR</a> dataset, all subjects give the consent to show their images.</p> 
         <p>If videos are not played correctly, please consider to use Chrome or download them</p>
 
+        <div class="video-compare-container" id="G02150_compare_videoDiv">
+          <video class="video" id="G02150_compare_video" loop playsinline autoPlay muted onplay="resizeAndPlay(this)">
+            <source src="videos/G02150.mp4" type="video/mp4">
+          </video>
+          <canvas height=0 class="videoMerge" id="G02150_compare_videoMerge"></canvas>
+        </div>
+        <br>
+        <div class="video-compare-container" id="G00380_compare_videoDiv">
+          <video class="video" id="G00380_compare_video" loop playsinline autoPlay muted onplay="resizeAndPlay(this)">
+            <source src="videos/G00380.mp4" type="video/mp4">
+          </video>
+          <canvas height=0 class="videoMerge" id="G00380_compare_videoMerge"></canvas>
+        </div>
+        <br>
         <div class="video-compare-container" id="G00071_compare_videoDiv">
           <video class="video" id="G00071_compare_video" loop playsinline autoPlay muted onplay="resizeAndPlay(this)">
             <source src="videos/G00071.mp4" type="video/mp4">
@@ -280,18 +294,11 @@
           <canvas height=0 class="videoMerge" id="street_compare_videoMerge"></canvas>
         </div>
         <br>
-        <div class="video-compare-container" id="G02150_compare_videoDiv">
-          <video class="video" id="G02150_compare_video" loop playsinline autoPlay muted onplay="resizeAndPlay(this)">
-            <source src="videos/G02150.mp4" type="video/mp4">
+        <div class="video-compare-container" id="text_compare_videoDiv">
+          <video class="video" id="text_compare_video" loop playsinline autoPlay muted onplay="resizeAndPlay(this)">
+            <source src="videos/text_samples.mp4" type="video/mp4">
           </video>
-          <canvas height=0 class="videoMerge" id="G02150_compare_videoMerge"></canvas>
-        </div>
-        <br>
-        <div class="video-compare-container" id="G00393_compare_videoDiv">
-          <video class="video" id="G00393_compare_video" loop playsinline autoPlay muted onplay="resizeAndPlay(this)">
-            <source src="videos/G00393.mp4" type="video/mp4">
-          </video>
-          <canvas height=0 class="videoMerge" id="G00393_compare_videoMerge"></canvas>
+          <canvas height=0 class="videoMerge" id="text_compare_videoMerge"></canvas>
         </div>
         <br><br>
       </center>

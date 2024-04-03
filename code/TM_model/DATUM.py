@@ -1,19 +1,18 @@
 import sys
 import os
-sys.path.insert(0, '/home/zhan3275/.local/lib/python3.8/site-packages')
+# sys.path.insert(0, '/home/zhan3275/.local/lib/python3.8/site-packages')
 
-my_env = os.environ.copy()
-my_env["PATH"] = "/home/zhan3275/.local/bin:" + my_env["PATH"]
-os.environ.update(my_env)
+# my_env = os.environ.copy()
+# my_env["PATH"] = "/home/zhan3275/.local/bin:" + my_env["PATH"]
+# os.environ.update(my_env)
 
-import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from thop import profile
 from einops import rearrange
 import argparse
-from .archs import conv1x1, conv3x3, conv5x5, actFunc, flow_warp, SpyNet, DCNv2PackFlowGuided
+from .archs import conv1x1, conv3x3, conv5x5, actFunc, flow_warp, SpyNet
 from .op.deform_attn import deform_attn, DeformAttnPack
 
 

@@ -1,13 +1,10 @@
-import sys
-sys.path.insert(0, '/home/zhan3275/.local/lib/python3.8/site-packages')
-
 import torch
 import torch.nn as nn
 from torch.nn import init as init
 from torch.nn.modules.utils import _pair, _single
 from torch.nn.modules.batchnorm import _BatchNorm
 from torch.nn import functional as F
-import os, math
+import math
 import torchvision
 from einops import rearrange
 
@@ -320,44 +317,6 @@ class ConvGRUCell(nn.Module):
         next_h       = torch.mul(update_gate,hidden) + (1-update_gate)*ct
         return next_h
 
-        
-# based on https://github.com/rogertrullo/pytorch_convlstm
-class CLSTM_cell(nn.Module):
-    """Initialize a basic Conv LSTM cell.
-    Args:
-      shape: int tuple thats the height and width of the hidden states h and c()
-      filter_size: int that is the height and width of the filters
-      num_features: int thats the num of channels of the states, like hidden_size
-
-    """
-
-    def __init__(self, input_chans, num_features, filter_size):
-        super(CLSTM_cell, self).__init__()
-
-        self.input_chans = input_chans
-        self.filter_size = filter_size
-        self.num_features = num_features
-        self.padding = (filter_size - 1) // 2  # in this way the output has the same size
-        self.conv = nn.Conv2d(self.input_chans + self.num_features, 4 * self.num_features, self.filter_size, 1,
-                              self.padding)
-
-    def forward(self, input, hidden_state):
-        hidden, c = hidden_state  # hidden and c are images with several channels
-        combined = torch.cat((input, hidden), 1)  # oncatenate in the channels
-        A = self.conv(combined)
-        (ai, af, ao, ag) = torch.split(A, self.num_features, dim=1)  # it should return 4 tensors
-        i = torch.sigmoid(ai)
-        f = torch.sigmoid(af)
-        o = torch.sigmoid(ao)
-        g = torch.tanh(ag)
-
-        next_c = f * c + i * g
-        next_h = o * torch.tanh(next_c)
-        return next_h, next_c
-
-    def init_hidden(self, batch_size, shape):
-        return (torch.zeros(batch_size, self.num_features, shape[0], shape[1]).cuda(),
-                torch.zeros(batch_size, self.num_features, shape[0], shape[1]).cuda())
 
 
 class ResidualBlockNoBN(nn.Module):
@@ -437,98 +396,7 @@ class SimpleGate(nn.Module):
     def forward(self, x):
         x1, x2 = x.chunk(2, dim=1)
         return x1 * x2
-
-
-class NAFBlock(nn.Module):
-    def __init__(self, c, DW_Expand=2, FFN_Expand=2, drop_out_rate=0.):
-        super().__init__()
-        dw_channel = c * DW_Expand
-        self.conv1 = nn.Conv2d(in_channels=c, out_channels=dw_channel, kernel_size=1, padding=0, stride=1, groups=1, bias=True)
-        self.conv2 = nn.Conv2d(in_channels=dw_channel, out_channels=dw_channel, kernel_size=3, padding=1, stride=1, groups=dw_channel,
-                               bias=True)
-        self.conv3 = nn.Conv2d(in_channels=dw_channel // 2, out_channels=c, kernel_size=1, padding=0, stride=1, groups=1, bias=True)
         
-        # Simplified Channel Attention
-        self.sca = nn.Sequential(
-            nn.AdaptiveAvgPool2d(1),
-            nn.Conv2d(in_channels=dw_channel // 2, out_channels=dw_channel // 2, kernel_size=1, padding=0, stride=1,
-                      groups=1, bias=True),
-        )
-
-        # SimpleGate
-        self.sg = SimpleGate()
-
-        ffn_channel = FFN_Expand * c
-        self.conv4 = nn.Conv2d(in_channels=c, out_channels=ffn_channel, kernel_size=1, padding=0, stride=1, groups=1, bias=True)
-        self.conv5 = nn.Conv2d(in_channels=ffn_channel // 2, out_channels=c, kernel_size=1, padding=0, stride=1, groups=1, bias=True)
-
-        self.norm1 = LayerNorm2D(c)
-        self.norm2 = LayerNorm2D(c)
-
-        self.dropout1 = nn.Dropout(drop_out_rate) if drop_out_rate > 0. else nn.Identity()
-        self.dropout2 = nn.Dropout(drop_out_rate) if drop_out_rate > 0. else nn.Identity()
-
-        self.beta = nn.Parameter(torch.zeros((1, c, 1, 1)), requires_grad=True)
-        self.gamma = nn.Parameter(torch.zeros((1, c, 1, 1)), requires_grad=True)
-
-    def forward(self, inp):
-        x = inp
-
-        x = self.norm1(x)
-
-        x = self.conv1(x)
-        x = self.conv2(x)
-        x = self.sg(x)
-        x = x * self.sca(x)
-        x = self.conv3(x)
-
-        x = self.dropout1(x)
-
-        y = inp + x * self.beta
-
-        x = self.conv4(self.norm2(y))
-        x = self.sg(x)
-        x = self.conv5(x)
-
-        x = self.dropout2(x)
-
-        return y + x * self.gamma
-        
-        
-class ResidualBlocksWithInputConv(nn.Module):
-    """Residual blocks with a convolution in front.
-    Args:
-        in_channels (int): Number of input channels of the first conv.
-        out_channels (int): Number of channels of the residual blocks.
-            Default: 64.
-        num_blocks (int): Number of residual blocks. Default: 30.
-    """
-
-    def __init__(self, in_channels, out_channels=64, num_blocks=30):
-        super().__init__()
-
-        main = []
-
-        # a convolution used to match the channels of the residual blocks
-        main.append(nn.Conv2d(in_channels, out_channels, 3, 1, 1, bias=True))
-        main.append(nn.LeakyReLU(negative_slope=0.1, inplace=True))
-
-        # residual blocks
-        main.append(
-            make_layer(
-                ResidualBlockNoBN, num_blocks, mid_channels=out_channels))
-
-        self.main = nn.Sequential(*main)
-
-    def forward(self, feat):
-        """
-        Forward function for ResidualBlocksWithInputConv.
-        Args:
-            feat (Tensor): Input feature with shape (n, in_channels, h, w)
-        Returns:
-            Tensor: Output feature with shape (n, out_channels, h, w)
-        """
-        return self.main(feat)
         
 
 def make_layer(block, num_blocks, **kwarg):
