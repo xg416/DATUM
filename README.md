@@ -60,7 +60,7 @@ Please refer to *CWSSIM_static.py* and *CWSSIM_dynamic.py* for evaluation of the
 ### Restoration:
 [Link](https://ieeexplore.ieee.org/abstract/document/10400926) Zhang, Xingguang, Zhiyuan Mao, Nicholas Chimitt, and Stanley H. Chan. "Imaging through the atmosphere using turbulence mitigation transformer." IEEE Transactions on Computational Imaging (2024).
 
-[Link](https://openaccess.thecvf.com/content/ICCV2023/html/Jaiswal_Physics-Driven_Turbulence_Image_Restoration_with_Stochastic_Refinement_ICCV_2023_paper.html) Ajay Jaiswal*, Xingguang Zhang*, Stanley H. Chan, Zhangyang Wang; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2023, pp. 12170-12181 
+[Link](https://openaccess.thecvf.com/content/ICCV2023/html/Jaiswal_Physics-Driven_Turbulence_Image_Restoration_with_Stochastic_Refinement_ICCV_2023_paper.html) Ajay Jaiswal*, Xingguang Zhang*, Stanley H. Chan, Zhangyang Wang. "Physics-Driven Turbulence Image Restoration with Stochastic Refinement." Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2023, pp. 12170-12181 
 
 [Link](https://arxiv.org/abs/2206.02146) Liang, Jingyun, Yuchen Fan, Xiaoyu Xiang, Rakesh Ranjan, Eddy Ilg, Simon Green, Jiezhang Cao, Kai Zhang, Radu Timofte, and Luc V. Gool. "Recurrent video restoration transformer with guided deformable attention." Advances in Neural Information Processing Systems 35 (2022): 378-393.
 
