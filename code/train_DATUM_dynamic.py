@@ -38,7 +38,7 @@ def get_args():
     parser.add_argument('--log_path', type=str, default='/home/zhan3275/Documents/DATUM/train_log', help='path to save logging files and images')
     parser.add_argument('--task', type=str, default='turb', help='choose turb or blur or both')
     parser.add_argument('--run_name', type=str, default='DATUM_dynamic', help='name of this running')
-    parser.add_argument('--start_over', action='store_true')
+    parser.add_argument('--start_over', action='store_true', help='start the scheduler over')
 
     parser.add_argument('--model', type=str, default='DATUM', help='type of model to construct')
     parser.add_argument('--output_full', action='store_true', help='output # of frames is the same as the input')
