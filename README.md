@@ -3,9 +3,7 @@
 # 【CVPR'2024🔥】Spatio-Temporal Turbulence Mitigation: A Translational Perspective
 </div>
 
-[Project Page](https://xg416.github.io/DATUM/) | [Pretrained dynamic scene model](https://drive.google.com/file/d/1IClAWZ-9kY5TggmuQGp11_dqOgCOCbjx/view?usp=sharing) | [Pretrained static scene model](https://drive.google.com/file/d/13pJyzXo3ricYIy8WHMAWMxp4crEXUolg/view?usp=sharing) | [ATSyn_dynamic](https://app.box.com/s/b1mhcatitus3poo2tgcelsd4rmw9o35o) | [ATSyn_static](https://app.box.com/s/xbx844bppqls2cqi74apac49iln0ztbz) 
-
-More instructions will be added within this week
+## [🔥 Project Page](https://xg416.github.io/DATUM/) 
 
 ## 🧩 Dataset and Pre-train Models
 | Datasets | Pre-train Models | 
