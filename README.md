@@ -47,7 +47,7 @@ python train_DATUM_static.py --val_path ${your_testing_data_path} -result ${path
 ```
 Inference on Turbulence Text dataset, we generate the central 4 frames for the text recognition:
 ```
-python inference_DATUM_text.py -f ${testing_static_scene_model_path}  --n_frames 60--resize 360
+python inference_DATUM_text.py -f ${testing_static_scene_model_path} --n_frames 60 --resize 360
 ```
 Please modify the path of the input and output images in the *inference_DATUM_text.py* 
 
