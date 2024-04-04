@@ -57,7 +57,7 @@ Please refer to *CWSSIM_static.py* and *CWSSIM_dynamic.py* for evaluation of the
 
 
 ## 👍 Useful Links
-### [Purdue i2Lab](https://engineering.purdue.edu/ChanGroup/project_turbulence.html) | [UG2 workshop @ CVPR 2024](https://cvpr2024ug2challenge.github.io/) 
+### [Turbulence @ Purdue i2Lab](https://engineering.purdue.edu/ChanGroup/project_turbulence.html) | [UG2 workshop @ CVPR 2024](https://cvpr2024ug2challenge.github.io/) 
 
 ### Restoration:
 [Link](https://ieeexplore.ieee.org/abstract/document/10400926) Zhang, Xingguang, Zhiyuan Mao, Nicholas Chimitt, and Stanley H. Chan. "Imaging through the atmosphere using turbulence mitigation transformer." IEEE Transactions on Computational Imaging (2024).
@@ -68,7 +68,7 @@ Please refer to *CWSSIM_static.py* and *CWSSIM_dynamic.py* for evaluation of the
 
 [Link](https://www.nature.com/articles/s42256-021-00392-1) Jin, Darui, Ying Chen, Yi Lu, Junzhang Chen, Peng Wang, Zichao Liu, Sheng Guo, and Xiangzhi Bai. "Neutralizing the impact of atmospheric turbulence on complex scene imaging via deep learning." Nature Machine Intelligence 3, no. 10 (2021): 876-884.
 
-### Dataset:
+### Datasets:
 [OTIS dataset](https://zenodo.org/records/161439) | [TSRWGAN data](https://zenodo.org/records/5101910) | [Turbulence Text](https://drive.google.com/file/d/1QWvQfPM-lJwGqK_Wm6lDbi-tYBu-Uopq/view?usp=sharing) | [Heat Chamber](https://drive.google.com/file/d/14iVachB95bCCtke8ONPD9CCH20JO75v2/view?usp=sharing) | [TMT dataset](https://github.com/xg416/TMT) | [BRIAR](https://arxiv.org/abs/2211.01917) (Not public yet)
 
 
