@@ -16,7 +16,7 @@
 cd code
 pip install -r requirements.txt
 ```
-LMDB format is encouraged for our dynamic scene data. Before preparing your LMDB file from the downloaded ATSyn-dynamic dataset, please make sure you have 2TB space on your server. You will need to modify the path variables in the *make_lmdb.py* file. After that, just run
+LMDB format is encouraged for our dynamic scene data. Before preparing your LMDB file from the downloaded ATSyn-dynamic dataset, please ensure you have 2TB of free space on your server. You will need to modify the path variables in the *make_lmdb.py* file. After that, just run
 ```
 cd code
 python make_lmdb.py
@@ -28,13 +28,13 @@ For the training on dynamic scene data, run the following:
 ```
 python train_DATUM_dynamic.py --train_path ${your_training_data_path} --train_info ${the associated train_info.json} --val_path ${your_testing_data_path} --val_info ${the associated test_info.json} -f ${loaded_model_path (if you want to resume a pre-trained checkpoint)} 
 ```
-Other argument for training are described in the *train_DATUM_dynamic.py* file, please refer to them for more flexible training. Use smaller *patch_size* and *num_frames* in the beginning phase of training can accelerate the entire process.
+Other arguments for training are described in the *train_DATUM_dynamic.py* file, please refer to them for more flexible training. Use smaller *patch_size* and *num_frames* in the beginning phase of training can accelerate the entire process.
 
-Later, you can start finetuning on the static scene images, run the following:
+Later, you can start finetuning on the static scene images for the static scene model by running the following:
 ```
 python train_DATUM_static.py --train_path ${your_training_data_path} --val_path ${your_testing_data_path} -f ${pretrained_dynamic_scene_model_path} 
 ```
-We injected certain level of Gaussian noise during training both modalities for better generalization on real world data.
+We injected a certain level of Gaussian noise during training in both modalities for better generalization on real-world data.
 
 ## 🚀 Performance Evaluation
 Dynamic scene model on ATSyn_dynamic dataset:
@@ -43,7 +43,7 @@ python test_DATUM_dynamic.py --data_path ${your_testing_data_path} --val_info ${
 ```
 Static scene model on ATSyn_static dataset:
 ```
-python train_DATUM_static.py --val_path ${your_testing_data_path} -result ${path_for_stored_output} -f ${testing_model_path} 
+python test_DATUM_static.py --val_path ${your_testing_data_path} -result ${path_for_stored_output} -f ${testing_model_path} 
 ```
 Inference on Turbulence Text dataset, we generate the central 4 frames for the text recognition:
 ```
@@ -51,7 +51,7 @@ python inference_DATUM_text.py -f ${testing_static_scene_model_path} --n_frames 
 ```
 Please modify the path of the input and output images in the *inference_DATUM_text.py* 
 
-Please refer to *CWSSIM_static.py* and *CWSSIM_dynamic.py* for evaluation of the CW-SSIM score.
+Please refer to *CWSSIM_static.py* and *CWSSIM_dynamic.py* to evaluate the CW-SSIM score.
 
 
 ## 👍 Useful Links
