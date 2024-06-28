@@ -39,7 +39,7 @@ We injected a certain level of Gaussian noise during training in both modalities
 ## 🚀 Performance Evaluation
 Dynamic scene model on ATSyn_dynamic dataset:
 ```
-python test_DATUM_dynamic.py --data_path ${your_testing_data_path} --val_info ${the associated test_info.json} -result ${path_for_stored_output} -mp ${testing_model_path} 
+python test_DATUM_dynamic.py --data_path ${your_testing_data_path} --info_path ${the associated test_info.json} -result ${path_for_stored_output} -mp ${testing_model_path} 
 ```
 Static scene model on ATSyn_static dataset:
 ```
