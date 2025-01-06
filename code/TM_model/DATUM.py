@@ -552,12 +552,23 @@ if __name__ == "__main__":
     data2 = torch.randn((1,8,3,540,960)).to(device=device)
     # for i in range(20):
     #     out = model(data)
-    s = time.time()
+    
+    start_event = torch.cuda.Event(enable_timing=True)
+    end_event = torch.cuda.Event(enable_timing=True)
+    
     with torch.no_grad():
         out = model((data, data2))
+        
+        start_event.record()
         for i in range(10):
             out = model((data, data2))
-    print(time.time()-s)
+        end_event.record()
+        
+    torch.cuda.synchronize()
+
+    # Calculate elapsed time in milliseconds
+    elapsed_time_ms = start_event.elapsed_time(end_event)
+    print(f"Average elapsed time: {elapsed_time_ms/10} ms")
     
     # with torch.no_grad():
     #     out = model(data)
