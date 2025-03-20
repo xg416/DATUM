@@ -9,7 +9,7 @@
 | Datasets | Pre-train Models | 
 |:-----: |:-----: |
 | [ATSyn_dynamic](https://app.box.com/s/yebpcezcblj36ilhy1elkty3wwplisp3) | [Pretrained dynamic scene model](https://drive.google.com/file/d/1IClAWZ-9kY5TggmuQGp11_dqOgCOCbjx/view?usp=sharing) |
-| [ATSyn_static](https://app.box.com/s/xbx844bppqls2cqi74apac49iln0ztbz)  | [Pretrained static scene model](https://drive.google.com/file/d/13pJyzXo3ricYIy8WHMAWMxp4crEXUolg/view?usp=sharing) |
+| [ATSyn_static](https://app.box.com/s/pxsdurj7xyr2u47c1g91t9gess14t5f0)  | [Pretrained static scene model](https://drive.google.com/file/d/13pJyzXo3ricYIy8WHMAWMxp4crEXUolg/view?usp=sharing) |
 
 ## 🔑 Setup and Prepare LMDB files
 ```
