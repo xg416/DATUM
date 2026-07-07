@@ -8,8 +8,8 @@
 ## 🧩 Dataset and Pre-train Models
 | Datasets | Pre-train Models | 
 |:-----: |:-----: |
-| [ATSyn_dynamic](https://drive.google.com/file/d/1LqqYHxfjhnlXdHjvtGlq201skJg34Owq/view?usp=sharing) | [Pretrained dynamic scene model](https://drive.google.com/file/d/1IClAWZ-9kY5TggmuQGp11_dqOgCOCbjx/view?usp=sharing) |
-| [ATSyn_static](https://drive.google.com/file/d/1a21vnZmAVto-sdhogHietTR2j5oEcqG8/view?usp=sharing)  | [Pretrained static scene model](https://drive.google.com/file/d/13pJyzXo3ricYIy8WHMAWMxp4crEXUolg/view?usp=sharing) |
+| [ATSyn_dynamic](https://drive.google.com/file/d/1D7NtCs5BJZ9aqDKDozkMktKabP5nYaRG/view?usp=sharing) | [Pretrained dynamic scene model](https://drive.google.com/file/d/1IClAWZ-9kY5TggmuQGp11_dqOgCOCbjx/view?usp=sharing) |
+| [ATSyn_static](https://drive.google.com/file/d/1HoHqTx9Cyu-2md-UgjxZFVx-RQbOUNCp/view?usp=sharing)  | [Pretrained static scene model](https://drive.google.com/file/d/13pJyzXo3ricYIy8WHMAWMxp4crEXUolg/view?usp=sharing) |
 
 ## 🔑 Setup and Prepare LMDB files
 ```
